@@ -1,0 +1,107 @@
+<% layout("layout/pateintsboiler") -%>
+<body>
+<div class="container my-4">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold">Patient Management</h2>
+      <p class="text-muted">Manage your Ayurvedic practice patients</p>
+    </div>
+  </div>
+
+  <!-- Stats (All 3 Cards in One Row) -->
+  <div class="row mb-4">
+    <!-- Total Patients -->
+    <div class="col-md-4">
+      <div class="card shadow-sm text-center p-3">
+        <h6 class="text-muted">Total Patients</h6>
+        <h3 class="fw-bold"><%= patients.length %></h3>
+      </div>
+    </div>
+
+    <!-- Completed Today -->
+    <div class="col-md-4">
+      <div class="card shadow-sm text-center p-3">
+        <h6 class="text-muted">Completed Today</h6>
+        <h3 class="fw-bold">3</h3>
+      </div>
+    </div>
+
+    <!-- Patient Compliance -->
+    <div class="col-md-4">
+      <div class="card shadow-sm text-center p-3">
+        <h6 class="text-muted">Patient Compliance (%)</h6>
+        <h3 class="fw-bold">88%</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search & Filters -->
+  <div class="row g-3 mb-4">
+    <!-- Search -->
+    <div class="col-md-6">
+      <form action="/patients" method="GET" class="d-flex gap-2">
+        <input
+          type="text"
+          name="search"
+          class="form-control"
+          placeholder="Search patients by name, age, or prakriti..."
+          value="<%= search %>"
+        >
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+
+    <!-- Prakriti Filter -->
+    <div class="col-md-3">
+      <form action="/patients" method="GET" id="prakritiForm">
+        <select class="form-select" name="prakriti" onchange="this.form.submit()">
+          <option <%= !prakritiFilter || prakritiFilter === 'All' ? 'selected' : '' %>>All</option>
+          <option value="Vata" <%= prakritiFilter==='Vata' ? 'selected' : '' %>>Vata</option>
+          <option value="Pitta" <%= prakritiFilter==='Pitta' ? 'selected' : '' %>>Pitta</option>
+          <option value="Kapha" <%= prakritiFilter==='Kapha' ? 'selected' : '' %>>Kapha</option>
+        </select>
+      </form>
+    </div>
+
+    <!-- Level Filter -->
+    <div class="col-md-3">
+      <form action="/patients" method="GET" id="levelForm">
+        <select class="form-select" name="level" onchange="this.form.submit()">
+          <option <%= !levelFilter || levelFilter === 'All' ? 'selected' : '' %>>All</option>
+          <option value="Low" <%= levelFilter==='Low' ? 'selected' : '' %>>Low</option>
+          <option value="Medium" <%= levelFilter==='Medium' ? 'selected' : '' %>>Medium</option>
+          <option value="High" <%= levelFilter==='High' ? 'selected' : '' %>>High</option>
+        </select>
+      </form>
+    </div>
+  </div>
+
+  <!-- Patient Cards -->
+  <div class="row g-4">
+    <% if(patients.length === 0) { %>
+      <p class="text-muted">No patients found.</p>
+    <% } %>
+
+    <% patients.forEach(patient => { %>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 h-100">
+          <h5 class="fw-bold"><%= patient.patientName %></h5>
+          <p class="text-muted mb-1"><%= patient.age %> years • <%= patient.gender %></p>
+          <p class="mb-1"><strong>Prakriti:</strong> <span class="badge bg-success"><%= patient.prakriti %></span></p>
+          <p class="mb-1"><strong>Last Visit:</strong> <%= patient.updatedAt.toISOString().split('T')[0] %></p>
+          <p class="mb-3"><strong>Compliance:</strong> <span class="badge bg-dark">88%</span></p>
+          <div class="d-flex justify-content-between mt-auto">
+            <a href="/patients/<%= patient._id %>" class="btn btn-outline-secondary btn-sm">View</a>
+            <button class="btn btn-success btn-sm">Diet Plan</button>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>

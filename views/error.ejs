@@ -1,0 +1,41 @@
+<% layout("layout/boilerplate") -%>
+
+<head>
+  <link rel="stylesheet" href="/css/error.css">
+</head>
+
+<body>
+  <div class="container-fluid main_header">
+    <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        <div class="row">
+          
+          <!-- Image Section -->
+          <div class="col-md-6 col-12 main_header_right align-items-center">
+            <figure>
+              <img src="/images/error404.png" alt="Error Image" class="img-fluid">
+            </figure>
+          </div>
+
+          <!-- Message Section -->
+          <div class="col-md-6 col-12 main_header_left">
+            <h1 class="style-error">Oops! Something went wrong.</h1>
+
+            <% if (err && err.messages) { %>
+              <ul>
+                <% err.messages.forEach(m => { %>
+                  <li><%= m %></li>
+                <% }) %>
+              </ul>
+            <% } else { %>
+              <p>Unexpected error occurred.</p>
+            <% } %>
+
+            <a href="/signup"><button>Go Back</button></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

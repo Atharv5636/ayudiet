@@ -1,0 +1,311 @@
+/* Header Section */
+
+/* Header card inside left section */
+.landing-page{
+    
+    min-height: 100vh;
+    display: flex;
+    padding-top: 10rem;
+    padding-left: 8rem;
+    align-items: center;
+    
+}
+/* .main_header {
+  
+} */
+
+.main_header_left {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.main_header_left h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.main_header_left p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/* .style-clr {
+    color: #eeff00;
+    font-size: 36px;
+    
+} */
+/* //shlok styling */
+/* Shlok container */
+.shlok-container {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  /* margin-left:2rem ; */
+  font-family: 'Noto Serif Devanagari', serif; /* Sanskrit feel */
+}
+
+/* Shlok (Sanskrit text) */
+.shlok-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2b5935; /* Ayurvedic green */
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.shlok-text:hover {
+  color: #1f4e79; /* shift to calm blue on hover */
+}
+
+/* Translation (hidden by default) */
+.shlok-translation {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  display: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Show translation on hover */
+.shlok-container:hover .shlok-translation {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.main_header_left button {
+    border: none;
+    padding: 0.8rem 1.8rem;
+    /* margin-left: 2rem; */
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.2);
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.main_header_left button:hover {
+    transform: scale(1.05);
+    background-color: #5a8d3c;
+}
+
+
+.main_header_right {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main_header_right img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 6px -6px rgba(0,0,0,0.2);
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* margin-left: 2rem; */
+}
+
+.header-buttons .btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-buttons .login-btn {
+    background-color: transparent;
+    border: 2px solid #00bfa5;
+    color: #00bfa5;
+}
+
+.header-buttons .login-btn:hover {
+    background-color: #00bfa5;
+    color: #fff;
+}
+
+.header-buttons .signup-btn {
+    background-color: #00bfa5;
+    border: 2px solid #00bfa5;
+    color: #fff;
+}
+
+.header-buttons .signup-btn:hover {
+    background-color: #00a392;
+    border-color: #00a392;
+}
+
+/* Features List */
+.features-list {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+     display: flex;                /* align icon + text */
+  align-items: flex-start;       /* align top */
+  gap: 0.6rem;                   /* spacing between icon and text */
+  font-weight: 500;
+  color: #000;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.features-list li::before {
+  content: "🍃";                 /* leaf icon */
+  flex-shrink: 0;                /* prevent shrinking */
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+}
+
+
+/* Common Button Styles */
+.btn-custom {
+ 
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+}
+
+.btn-primary-custom {
+    background-color: var(--main-color);
+    color: #fff;
+    border-color: var(--main-color);
+}
+
+.btn-primary-custom:hover {
+    background-color: #5a8d3c;
+    border-color: #5a8d3c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--main-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* new card */
+/* Reset */
+
+
+
+
+
+/* Section */
+.ayurveda-section {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.ayurveda-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.ayurveda-section .subtitle {
+  font-size: 1.75rem;
+  color: #5a6473;
+  margin: 10px auto 40px;
+  max-width: 700px;
+}
+.container h4{
+    font-size: 3.2rem;
+}
+/* Cards */
+/* Cards Container */
+
+/* 🔹 Cards Grid Layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px; /* spacing between cards */
+  margin-top: 60px;
+}
+
+/* 🔹 Card Base */
+.card {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+
+  /* Increased padding for better text fit */
+  padding: 50px 40px !important;
+
+  /* Smooth hover transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* 🔹 Card Icon */
+.card .icon img {
+  width: 70px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+}
+
+/* 🔹 Card Heading */
+.card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+/* 🔹 Card Paragraph */
+.card p {
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: #5a6473;
+  line-height: 1.6;
+  margin-bottom: 0;
+}

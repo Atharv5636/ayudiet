@@ -1,0 +1,161 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM & GLOBAL STYLES (MATCHING DASHBOARD)
+   ========================================================================== */
+:root {
+    --primary-green: #00897B;
+    /* Deep Teal/Green */
+    --secondary-green: #2ECC71;
+    /* Accent Green */
+    --accent-blue: #3498DB;
+    --accent-purple: #9B59B6;
+    --accent-red: #E74C3C;
+    --dark-text: #26384C;
+    --light-text: #6B7B8F;
+    --subtle-gray: #EAECEE;
+    /* Light border/background */
+    --white: #FFFFFF;
+    --glass-bg-light: rgba(255, 255, 255, 0.2);
+    --glass-bg-medium: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.3);
+
+    --font-heading: 'Lora', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* --- Global Reset & Body Styling --- */
+*
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-text);
+    background-color: #E2ECF0;
+    /* Dashboard background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    /* For background-texture */
+
+    /* Prevent body scroll if texture overflows */
+}
+
+/* --- Dashboard-like background texture --- */
+/* ===== Reset & Base ===== */
+
+
+
+
+/* ===== Card Container ===== */
+.assessment-container {
+  width: 100%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 30px 40px;
+}
+
+/* ===== Header ===== */
+.assessment-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.assessment-header .form-logo {
+  width: 80px;
+  margin-bottom: 12px;
+}
+
+.assessment-header h1 {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  color: #2e3a59;
+}
+
+/* ===== Form Sections ===== */
+.step-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #37474f;
+  margin: 25px 0 15px;
+  border-left: 4px solid #4caf50;
+  padding-left: 10px;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== Grid Layout ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.span-2 {
+  grid-column: span 2;
+}
+
+/* ===== Inputs & Labels ===== */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input, select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+}
+
+/* ===== Footer ===== */
+.assessment-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #4caf50;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #43a047;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76,175,80,0.3);
+}

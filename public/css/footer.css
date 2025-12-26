@@ -1,0 +1,158 @@
+/* Footer Styling */
+.footer {
+    background-color: #1e2a38;
+    color: #ccc;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 3rem;
+    max-width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.footer-brand h2 {
+    color: #00bfa5;
+    margin-top: 0.5rem;
+}
+
+.footer-brand p {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+.brand-logo img{
+    width: 8px;
+}
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(1.2);
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.footer-links h3 {
+    color: #00bfa5;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #00bfa5;
+}
+
+.footer-links ul li img {
+    margin-right: 0.5rem;
+}
+
+.newsletter {
+    background-color: #223544;
+    padding: 2rem 0;
+}
+
+.newsletter-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.newsletter-content h3 {
+    color: #00bfa5;
+    font-size: 1.8rem;
+}
+
+.newsletter-content p {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+.newsletter-content form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-content input {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    outline: none;
+}
+
+.newsletter-content button {
+    background-color: #00bfa5;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-content button:hover {
+    background-color: #00a392;
+}
+
+.footer-bottom {
+    background-color: #1b2430;
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bottom-content p {
+    margin: 0;
+}
+
+.legal-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.legal-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #00bfa5;
+}

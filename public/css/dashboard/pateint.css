@@ -1,0 +1,35 @@
+body {
+  background: #fdfdf9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.stat-card {
+background-color: #1a8754;
+color: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.patient-card {
+  background: rgba(255, 255, 255, 0.12); /* very light glass layer */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* soft, translucent border */
+  border-radius: 22px; /* smoother corners */
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* subtle depth */
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%); /* Safari */
+  transition: 0.3s ease;
+}
+
+.patient-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.4); /* border brightens on hover */
+}
+

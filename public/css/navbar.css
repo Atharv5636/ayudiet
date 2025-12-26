@@ -1,0 +1,98 @@
+/* Navbar Styling */
+.main_menu {
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #faf7f2;
+    opacity: 0.75;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.navbar-brand img {
+    height: 80px;
+    max-height: 100px;
+    width: auto;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%2833, 37, 41, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navbar-buttons button {
+    padding: 0.6rem 1.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button Styles */
+.button1 button {
+    background: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+.button1 button:hover {
+    background: var(--main-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.button2 button {
+    background: var(--main-color);
+    color: #fff;
+    border: 2px solid var(--main-color);
+}
+
+.button2 button:hover {
+    background: #5a8d3c;
+    border-color: #5a8d3c;
+    transform: translateY(-2px);
+}
+
+/* Animated Icon Example */
+.fa-snowflake {
+    transition: all linear;
+    animation: rot 2s linear infinite;
+    color: var(--main-color);
+}
+
+@keyframes rot {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

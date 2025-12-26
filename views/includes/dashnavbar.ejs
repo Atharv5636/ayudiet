@@ -1,0 +1,142 @@
+<!-- dashnavbar.ejs -->
+<nav class="dashboard-navbar">
+  <div class="navbar-left">
+    <!-- Logo / Brand -->
+    <a href="/" class="brand-logo">
+      <img src="/images/logo.jpg" alt="AyuDiet Logo" class="logo-img" />
+    </a>
+
+    <!-- Greeting -->
+    <div class="welcome-text">
+      <h1 class="greeting">
+        Welcome back, <span class="doctor-name">Dr.
+  <%= currentUser ? currentUser.fullname : "Doctor" %>
+</span>
+
+      </h1>
+      <p class="current-date">
+        <script>
+          // Dynamically show today's date
+          document.write(new Date().toLocaleDateString("en-IN", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+          }));
+        </script>
+      </p>
+    </div>
+  </div>
+
+  <div class="navbar-right">
+    <!-- Search bar -->
+    <div class="search-container">
+      <form class="d-flex" role="search">
+        <div class="input-group">
+          <input
+            class="form-control"
+            type="search"
+            placeholder="Search Patients"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit" aria-label="Search">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Notification Bell -->
+    <button class="icon-btn notif-btn" aria-label="Notifications">
+      <i class="fa-solid fa-bell"></i>
+      <span class="notif-badge">3</span>
+    </button>
+
+    <!-- Profile Dropdown -->
+    <div class="dropdown">
+      <button
+        class="btn btn-light dropdown-toggle profile-btn"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <span class="profile-avatar">&#128100;</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">My Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item text-danger" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+/* Dashboard Navbar Styles */
+.dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e0dbc8;
+  padding: 0.8rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  height: 40px;
+  border-radius: 8px;
+}
+
+.welcome-text h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.welcome-text p {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* .notif-btn {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.notif-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #e63946;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+} */
+.profile-avatar {
+  font-size: 1.2rem;
+  background: #f4a261;
+  color: white;
+  border-radius: 50%;
+  padding: 6px;
+}
+</style>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AyuDiet - Patient Ayurvedic Assessment</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard/patientform.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="assessment-container glassmorphic-card">
+  <form method="post" action="/dashboard/patient-form">
+
+    <header class="assessment-header">
+      <img src="/images/logo.png" alt="AyuDiet Logo" class="form-logo">
+      <h1>Patient Ayurvedic Assessment</h1>
+    </header>
+
+    <div class="form-body">
+
+      <!-- Patient Profile -->
+      <h3 class="step-title">Patient Profile</h3>
+      <div class="form-grid">
+        <div class="form-group span-2">
+          <label for="patient-name">Patient Name</label>
+          <input type="text" id="patient-name" name="patientName" placeholder="Enter patient's full name" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" name="height" required>
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" name="weight" required>
+        </div>
+      </div>
+
+      <!-- Medical Essentials -->
+      <h3 class="step-title">Medical Essentials</h3>
+      <div class="form-grid">
+        <div class="form-group span-2">
+          <label for="conditions">Health Conditions</label>
+          <input type="text" id="conditions" name="conditions">
+        </div>
+        <div class="form-group span-2">
+          <label for="medications">Current Medications</label>
+          <input type="text" id="medications" name="medications">
+        </div>
+        <div class="form-group span-2">
+          <label for="allergies">Known Allergies</label>
+          <input type="text" id="allergies" name="allergies">
+        </div>
+      </div>
+
+      <!-- Prakriti Assessment -->
+      <h3 class="step-title">Prakriti Assessment</h3>
+      <div class="form-grid">
+        <div class="form-group span-2">
+          <label for="prakriti">Select Dominant Dosha</label>
+          <select id="prakriti" name="prakriti" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Vata">Vata</option>
+            <option value="Pitta">Pitta</option>
+            <option value="Kapha">Kapha</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Lifestyle & Preferences -->
+      <h3 class="step-title">Lifestyle & Preferences</h3>
+      <div class="form-grid">
+        <div class="form-group span-2">
+          <label for="dietType">Diet Type</label>
+          <select id="dietType" name="dietType" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Non-Vegetarian">Non-Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+          </select>
+        </div>
+        <div class="form-group span-2">
+          <label for="activityLevel">Activity Level (1 - 5)</label>
+          <input type="number" id="activityLevel" name="activityLevel" min="1" max="5" value="3" required>
+        </div>
+        <div class="form-group span-2">
+          <label for="preferences">Preferences (comma separated)</label>
+          <input type="text" id="preferences" name="preferences" placeholder="e.g., Quick Meals, Loves Cooking">
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="assessment-footer">
+      <button type="submit" class="btn-primary">Submit</button>
+    </footer>
+
+  </form>
+</div>
+
+</body>
+</html>

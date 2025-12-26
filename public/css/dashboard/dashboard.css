@@ -1,0 +1,854 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+
+  color: #2f2f2f;
+}
+
+.dashboard-layout {
+    
+  display: flex;
+}
+
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+   background: url("/images/dashbg1.png") no-repeat center center fixed;
+  background-size: cover;
+  
+}
+
+/* main conetent of dashboard */
+
+/* ====== MAIN CONTENT ====== */
+
+
+/* Top Navbar */
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffffcc; /* translucent white */
+  border-bottom: 1px solid #e0dbc8;
+  backdrop-filter: blur(8px);
+}
+
+.greeting {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2f5233;
+}
+
+.current-date {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Search Bar */
+.search-container .form-control {
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #c8c2ac;
+}
+
+.search-container .btn {
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #2f5233;
+  color: #2f5233;
+  transition: all 0.3s ease;
+}
+
+.search-container .btn:hover {
+  background: #2f5233;
+  color: #fff;
+}
+
+/* Dashboard Cards */
+
+
+/* ================= Reset & Body ================= */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+
+
+
+/* ===== Specific CSS for Progress Card ===== */
+
+/* This rule makes the progress card wider in the grid layout.
+   You can remove it if you want all cards to be the same size. */
+/* ===== General Card Style (Required for Glass Effect) ===== */
+
+.card {
+    background: rgba(255, 255, 255, 0.319) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    /* Added more space below the header */
+    color: var(--white);
+}
+
+.card .card-header h3 {
+    font-weight: 600;
+}
+
+
+.progress-card {
+    grid-column: span 2;
+    margin: 20px;
+}
+
+.progress-card .card-header i {
+    margin-right: 0.75rem;
+    /* Space between icon and text */
+    opacity: 0.8;
+}
+
+.progress-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.progress-list li {
+    margin-bottom: 1.75rem;
+    /* Increased space between each progress bar item */
+}
+
+.progress-list li:last-child {
+    margin-bottom: 0;
+    /* No margin for the last item */
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    /* Space between the label and the bar */
+    font-size: 0.95rem;
+    /* Slightly larger font for readability */
+    font-weight: 500;
+    color: var(--white);
+}
+
+/* ACC - Modern Progress Bar Style */
+
+.progress-bar {
+    /* Container for the bar */
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* A darker, translucent track */
+    border-radius: 12px;
+    padding: 2px;
+    /* Inner padding to create a border effect */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+    /* Inner shadow for depth */
+    overflow: hidden;
+}
+
+.progress-bar span {
+    /* The colored fill of the bar */
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    /* Rounded to fit inside the container */
+
+    /* Gradient for a rich, modern look */
+    background: whitesmoke;
+    opacity: 0.75;
+
+    /* Smooth animation for when the width changes */
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Adds a subtle highlight to the bar */
+    box-shadow: 0 0 10px rgba(78, 202, 165, 0.7);
+}
+
+
+
+/* //final  */
+/* =================================================== */
+/* Modern Styling for Review & Agenda Cards            */
+/* =================================================== */
+
+/* =================================================== */
+/* Modern Styling for Dashboard Cards                  */
+/* =================================================== */
+
+/* --- 1. Main Card Container --- */
+.cards-container {
+    display: grid;
+    padding: 20px;
+    /* Creates flexible columns that are at least 350px wide */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem; /* The space between your cards */
+    width: 100%;
+}
+
+/* --- 2. Base Card Styling (for all cards) --- */
+.card,
+.review-card,
+.agenda-card {
+    /* Main Aesthetics */
+     background: rgba(255, 255, 255, 0.319) !important;
+    border-radius: 18px;
+    border: 1px solid #EAECEE; /* A light border for definition */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* A soft, professional shadow */
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #EAECEE; /* A subtle separator line */
+}
+
+.card-header h3 {
+    margin: 0;
+    font-family: 'Lora', serif; /* An elegant heading font */
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark, #26384C);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Space for an icon */
+}
+
+/* --- 3. Enhanced List Styling (for items inside cards) --- */
+.list,
+.card-list,
+.appointment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Pushes the card footer down */
+}
+
+.list li,
+.card-list li,
+.appointment-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #F4F6F7; /* A very light separator */
+    transition: background-color 0.2s ease;
+    border-radius: 8px;
+}
+.list li:hover,
+.card-list li:hover,
+.appointment-list li:hover {
+    background-color: #F8F9F9; /* A subtle hover effect */
+}
+.list li:last-child,
+.card-list li:last-child,
+.appointment-list li:last-child {
+    border-bottom: none;
+}
+
+.content .title,
+.list-item-content .title {
+    font-weight: 600;
+    color: var(--text-dark, #26384C);
+    margin-bottom: 0.25rem;
+}
+
+.content .subtitle,
+.list-item-content .subtitle {
+    font-size: 0.85rem;
+    color: var(--text-light, #6B7B8F);
+}
+
+/* --- 4. "Plans Awaiting Review" Card Specifics --- */
+.review-card .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--dark-green, #2b5935);
+    color: var(--white, #FFFFFF);
+}
+
+.review-card .pill {
+    margin-left: auto; /* Pushes to the right */
+    padding: 4px 12px;
+    background-color: var(--light-green, #E0F7F4);
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-teal, #00897B);
+    flex-shrink: 0;
+}
+
+.review-card .card-footer-link {
+    display: block;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #F4F6F7;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-light, #6B7B8F);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.review-card .card-footer-link:hover {
+    color: var(--primary-teal, #00897B);
+}
+
+
+/* --- 5. "Today's Agenda" Card Specifics --- */
+.add-appointment-btn {
+    background-color: var(--primary-teal, #00897B);
+    color: var(--white, #FFFFFF);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+.add-appointment-btn:hover {
+    background-color: var(--dark-green, #2b5935);
+}
+
+.appointment-item.current {
+    background-color: var(--dark-green, #2b5935);
+}
+.appointment-item.current .title,
+.appointment-item.current .subtitle {
+    color: var(--white, #FFFFFF);
+}
+
+.appointment-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--light-green, #E0F7F4);
+    color: var(--primary-teal, #00897B);
+    font-size: 1rem;
+}
+.appointment-item.current .appointment-icon {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white, #FFFFFF);
+}
+
+.appointment-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+.appointment-actions .action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #F4F6F7;
+    color: var(--text-light, #6B7B8F);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+.appointment-item.current .action-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--white, #FFFFFF);
+}
+.appointment-actions .action-btn.edit:hover {
+    background-color: #3498DB; /* Blue for edit */
+    color: white;
+}
+.appointment-actions .action-btn.delete:hover {
+    background-color: #E74C3C; /* Red for delete */
+    color: white;
+}
+
+.agenda-cta {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background: var(--primary-teal, #00897B);
+    color: var(--white, #FFFFFF);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.agenda-cta:hover {
+    background-color: var(--dark-green, #2b5935);
+}
+
+/* ================================== */
+/* Grid Container                     */
+/* ================================== */
+
+/* Main 6x6 Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* 6 columns */
+    grid-template-rows: repeat(4, 100px);
+    /* 6 rows (adjust height) */
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Cards (2x2 each) */
+/* ======================================== */
+/* Awesome Styling for Overview Cards       */
+/* ======================================== */
+
+/* =================================================== */
+/* Modern Styling for Overview Cards (Image Match)     */
+/* =================================================== */
+
+.overview-card {
+    /* Main Aesthetics */
+    background: rgba(255, 255, 255, 0.319) !important;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    border: 1px solid #EAECEE; /* Light border */
+    
+    /* Layout */
+    display: flex; /* Use flexbox for internal layout */
+    align-items: center;
+    justify-content: center; /* Align icon and content at the top */
+    gap: 1.5rem; /* Space between icon and text content */
+    padding: 1.5rem; /* Internal padding */
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Icon Styling --- */
+.card-icon-wrapper {
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    width: 56px;
+    height: 56px;
+    border-radius: 14px; /* Slightly rounded square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background-color: #E9F7EF; /* Light green background */
+    color: #2ECC71; /* Primary green icon color */
+}
+
+/* --- Content Wrapper --- */
+.card-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.card-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white; /* Softer gray for the label */
+    margin-bottom: 0.5rem;
+}
+
+.card-value-group {
+    display: flex;
+    align-items: baseline; /* Aligns number and percentage horizontally */
+    gap: 1rem; /* Space between value and change */
+    margin-bottom: 0.5rem;
+}
+
+.overview-card .card-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2rem; /* Large and bold number */
+    font-weight: 700;
+    color: wheat; /* Dark text color */
+    margin: 0; /* Reset default margin from H2 */
+    line-height: 1; /* Ensures text aligns well */
+}
+
+.card-change {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem; /* Space between icon and text in change indicator */
+}
+
+.card-change.positive {
+    color: #2ECC71; /* Green for positive change */
+}
+
+.card-change.negative {
+    color: #E74C3C; /* Red for negative change (if you add this state) */
+}
+
+.card-change i {
+    font-size: 0.8rem; /* Smaller icon inside change indicator */
+}
+
+.card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: whi; /* Lighter gray for description */
+    margin: 0;
+}
+
+/* --- Grid Positioning (from your previous code - ensure this is in your grid layout) --- */
+.card1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+.card2 {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+}
+.card3 {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+}
+.card4 {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 2;
+}
+
+/* --- Color Variations for each card --- */
+.card1::before {
+    background-color: #3498DB; /* Blue */
+}
+.card2::before {
+    background-color: #9B59B6; /* Purple */
+}
+.card3::before {
+    background-color: #2ECC71; /* Green */
+}
+.card4::before {
+    background-color: #E74C3C; /* Red */
+}
+
+/* --- Grid Positioning (Unchanged) --- */
+.card1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+.card2 {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+}
+.card3 {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+}
+.card4 {
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 2;
+}
+/* Chatbot (2x4, spans 4 rows vertically) */
+/* ================================== */
+/* Professional Chatbot Styling       */
+/* ================================== */
+
+.chatbot-container {
+    /* Main Aesthetics */
+    background: rgba(255, 255, 255, 0.319) !important;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* A soft, professional shadow */
+    border: 1px solid #EAECEE; /* A light border for definition */
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Clips content to the rounded corners */
+
+    /* Grid Positioning */
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 4;
+}
+
+/* --- Chat Header --- */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #EAECEE;
+    color: #26384C; /* Dark text color */
+    font-family: 'Inter', sans-serif;
+}
+
+.chat-header strong {
+    font-weight: 600;
+}
+
+.chat-header .close-btn {
+    font-size: 1.5rem;
+    color: #6B7B8F; /* Softer gray color */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.chat-header .close-btn:hover {
+    color: #E74C3C; /* Red on hover */
+}
+
+/* --- Chat Body & Messages --- */
+.chat-body {
+    flex-grow: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+  /* A slightly darker background for contrast */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-message {
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    line-height: 1.5;
+    max-width: 85%;
+    font-size: 0.9rem;
+}
+
+.chat-message.bot {
+    align-self: flex-start;
+    background-color: #EAECEE; /* Light gray for bot messages */
+    color: #26384C;
+    border-bottom-left-radius: 4px; /* "Tail" effect */
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #00897B; /* Primary teal color */
+    color: #FFFFFF;
+    border-bottom-right-radius: 4px; /* "Tail" effect */
+}
+
+/* --- Chat Footer & Input --- */
+.chat-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-top: 1px solid #EAECEE;
+    background-color: #FFFFFF;
+}
+
+.chat-input {
+    flex-grow: 1;
+    border: 1px solid #EAECEE;
+    background-color: #F8F9F9;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+.chat-input:focus {
+    border-color: #00897B; /* Highlight on focus */
+}
+
+.send-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #00897B; /* Primary teal color */
+    color: #FFFFFF;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.send-btn:hover {
+    background-color: #2b5935; /* Dark green on hover */
+}
+/* chatboat css */
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #00897B;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-header-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-header-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.chatbot-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #fff;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+#closeBtn{
+    color: white;
+}
+/* Chat message from bot/assistant */
+.chat-message.bot {
+    background-color: #ffffff; /* white background */
+    color: #000000; /* text color */
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    display: inline-block;
+    max-width: 80%;
+}
+
+/* Optional: align bot messages to left */
+.chat-message.bot {
+    align-self: flex-start;
+}
+
+/* User messages for reference */
+.chat-message.user {
+    background-color: #00a86b; /* green */
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    display: inline-block;
+    max-width: 80%;
+    align-self: flex-end; /* aligns user messages to right */
+}
+
+/* Chat body flex layout */
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+/* Bot Messages (same style as user bubble but aligned left) */
+.chat-message.bot {
+  background-color: #ffffff !important; /* Force white */
+  color: #000000; 
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 5px 0;
+  max-width: 70%;
+  align-self: flex-start;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* User messages */
+.chat-message.user {
+  background:white;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 5px;
+  align-self: flex-end;
+  max-width: 70%;
+}
+
+/* Bot / Assistant messages */
+.chat-message.bot,
+.chat-message.assistant {
+  background: white !important;
+  color: black !important;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin: 5px;
+  align-self: flex-start;
+  max-width: 70%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Chatbot fullscreen style */
+.chatbot-container.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  z-index: 1001;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Blur the background when fullscreen */
+body.blur-active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(16px);
+  background: rgba(0,0,0,0.3); /* dim effect */
+  z-index: 1000; /* sits behind chatbot */
+}
+
+/* --- Responsive (Unchanged from your code) --- */
+@media (max-width: 992px) {
+    .chatbot-container {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}

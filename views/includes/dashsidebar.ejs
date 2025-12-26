@@ -1,0 +1,149 @@
+<!-- sidebar for dashboard  -->
+<aside class="icon-sidebar">
+  <!-- This top button can be used to toggle the main menu -->
+  <a href="#" class="icon-btn toggle-btn-alt" aria-label="Toggle Menu">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </a>
+  <a href="#" class="icon-btn primary" aria-label="Add New">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M5 12h14" />
+      <path d="M12 5v14" />
+    </svg>
+  </a>
+  <a href="#" class="icon-btn" aria-label="View Documents">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path
+        d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+      />
+      <polyline points="14 2 14 8 20 8" />
+    </svg>
+  </a>
+  <a href="#" class="icon-btn active" aria-label="Dashboard">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <rect x="3" y="3" width="7" height="7" />
+      <rect x="14" y="3" width="7" height="7" />
+      <rect x="3" y="14" width="7" height="7" />
+      <rect x="14" y="14" width="7" height="7" />
+    </svg>
+  </a>
+</aside>
+
+<!-- MAIN SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <img src="images/logo.jpg" alt="AyuDiet Pro Logo" class="sidebar-logo" />
+
+    <button class="toggle-btn"><i class="fa-solid fa-chevron-left"></i></button>
+  </div>
+  <div class="quick-action">
+    <span class="quick-title">Quick Action</span>
+    <div class="quick-features">
+      <button class="primary-btn">
+        <a href="/dashboard/patient-form"
+          ><span class="btn-icon">+</span> Add New Patient</a
+        >
+      </button>
+     
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="main-features">
+      <a href="dashboard" class="nav-link active"
+        ><span class="nav-ic"
+          ><i><i class="fa-solid fa-grip"></i></i
+        ></span>
+        Dashboard</a
+      >
+      <a href="/patients" class="nav-link">
+        <span class="nav-ic"><i class="fa-solid fa-user"></i></span> Patients
+      </a>
+
+      <a href="#" class="nav-link"
+        ><span class="nav-ic"><i class="fa-solid fa-sheet-plastic"></i></span> Plans</a
+      >
+      <a href="#" class="nav-link"
+        ><span class="nav-ic"><i class="fa-solid fa-calendar-days"></i></span> Calendar</a
+      >
+    </div>
+    <!-- <div class="more-features">
+      
+      <a href="#" class="nav-link"
+        >
+        <span>&#128202</span>
+        <p>Herb Database</p></a
+      >
+      <a href="#" class="nav-link"
+        ><span class="nav-ic">&#128202;</span> Analytics</a
+      >
+      <a href="#" class="nav-link"
+        ><span class="nav-ic">&#128276;</span> Notifications
+        <span class="notif-badge">3</span></a
+      >
+      <a href="#" class="nav-link"
+        ><span class="nav-ic">&#9881;</span> Settings</a
+      >
+    </div> -->
+  </nav>
+ 
+</aside>
+
+<script>
+  // Select all potential toggle buttons
+  const toggleButtons = document.querySelectorAll(
+    ".toggle-btn, .toggle-btn-alt"
+  );
+  const sidebar = document.querySelector(".sidebar");
+
+  // Add a click event to each toggle button
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent the link from navigating
+      sidebar.classList.toggle("hidden");
+      document.body.classList.toggle("sidebar-hidden");
+    });
+  });
+</script>
+
+<!-- top horizontal navbar for dashboard  -->

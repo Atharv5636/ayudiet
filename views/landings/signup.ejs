@@ -1,0 +1,146 @@
+<% layout("layout/boilerplatesl") -%>
+<body>
+  <div class="page-container">
+    <!-- Left Info/Image Section -->
+    <div class="left-part">
+      <h1>Welcome to AyuDiet</h1>
+      <img src="images/signup.png" alt="signup" class="signup-img">
+      <h2>Begin your journey towards holistic health.</h2>
+      <p>Seamless Ayurvedic nutrition planning -- rooted in tradition, powered by AI.</p>
+    </div>
+
+    <!-- Right Signup Form Section -->
+    <div class="right-part">
+      <div class="form-card">
+        <div class="logo">
+          <img src="images/logo.png" alt="AyuDiet Logo">
+        </div>
+
+        <h2 class="title">Create Your Professional Clinical Account</h2>
+        <p class="sub-text">Join the first group of practitioners pioneering AI-powered Ayurveda</p>
+
+        <div class="form-container">
+          <form id="signupForm" action="/signup" method="POST" novalidate>
+
+            <!-- Full Name -->
+            <div class="input-group">
+              <label for="fullname">Full Name</label>
+              <div class="input-field">
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+              <label for="email">Email Address</label>
+              <div class="input-field">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <div class="input-field">
+                <i class="fa-solid fa-phone icon"></i>
+                <input type="tel" id="phone" name="phone" placeholder="+91-9876543415" required>
+              </div>
+            </div>
+
+            <!-- Specialization -->
+            <div class="input-group specialization">
+              <label for="specialization">Specialization</label>
+              <div class="input-field">
+                <i class="fa-solid fa-stethoscope icon"></i>
+                <select id="specialization" name="specialization" required>
+                  <option value="">-- Select Specialization --</option>
+                  <option value="Ayurveda">Ayurveda</option>
+                  <option value="Clinical Nutrition">Clinical Nutrition</option>
+                  <option value="General Medicine">General Medicine</option>
+                  <option value="Internal Medicine">Internal Medicine</option>
+                  <option value="Other">Other (specify)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Clinic -->
+            <div class="input-group">
+              <label for="clinic">Clinic Name</label>
+              <div class="input-field">
+                <i class="fa-solid fa-hospital icon"></i>
+                <input type="text" id="clinic" name="clinic" placeholder="Enter your clinic name" required>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="input-group">
+              <label for="password">Password</label>
+              <div class="input-field">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+              </div>
+              <small id="password-strength"></small>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-group">
+              <label for="confirm_password">Confirm Password</label>
+              <div class="input-field">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+              </div>
+              <small id="confirm-msg" style="color:red; display:none;">Passwords do not match</small>
+            </div>
+
+            <!-- Agreements -->
+            <div class="agreement">
+              <input type="checkbox" id="terms" name="terms" value="true" required>
+              <label for="terms">I agree to Terms of Service and Privacy Policy</label>
+            </div>
+
+            <div class="agreement">
+              <input type="checkbox" id="licensed" name="licensed" value="true" required>
+              <label for="licensed">I confirm I am a licensed healthcare professional</label>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="signup-btn">Create Professional Account</button>
+
+            <div class="signup-text">
+              Already registered as a healthcare professional? <a href="/login">Log In</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // quick client-side confirm password check
+    const signupForm = document.getElementById('signupForm');
+    const password = document.getElementById('password');
+    const confirm = document.getElementById('confirm_password');
+    const confirmMsg = document.getElementById('confirm-msg');
+
+    function checkPasswords() {
+      if (confirm.value && password.value !== confirm.value) {
+        confirmMsg.style.display = 'block';
+        return false;
+      }
+      confirmMsg.style.display = 'none';
+      return true;
+    }
+
+    confirm.addEventListener('input', checkPasswords);
+    password.addEventListener('input', checkPasswords);
+
+    signupForm.addEventListener('submit', (e) => {
+      if (!checkPasswords()) {
+        e.preventDefault();
+        confirm.focus();
+      }
+    });
+  </script>
+</body>

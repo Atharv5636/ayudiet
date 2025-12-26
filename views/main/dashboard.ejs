@@ -1,0 +1,229 @@
+<% layout("layout/dashboiler") -%>
+
+<body>
+  <div class="dashboard-grid">
+    <!-- Dynamic Overview Cards -->
+    <% 
+      const overviewCards = [
+        {
+          icon: "fas fa-users",
+          label: "Happy Patients",
+          value: "1,248",
+          change: "+12%",
+          changeType: "positive",
+          description: "Active patients this month"
+        },
+        {
+          icon: "fas fa-user-plus",
+          label: "New Patients",
+          value: "256",
+          change: "+8%",
+          changeType: "positive",
+          description: "Patients added this month"
+        },
+        {
+          icon: "fas fa-calendar-check",
+          label: "Appointments",
+          value: "342",
+          change: "-5%",
+          changeType: "negative",
+          description: "Scheduled appointments this month"
+        },
+        {
+          icon: "fas fa-heartbeat",
+          label: "Recoveries",
+          value: "1,102",
+          change: "+15%",
+          changeType: "positive",
+          description: "Patients recovered this month"
+        }
+      ];
+    %>
+
+    <% overviewCards.forEach((card, index) => { %>
+      <div class="overview-card card<%= index + 1 %>">
+        <div class="card-icon-wrapper">
+          <i class="<%= card.icon %>"></i>
+        </div>
+        <div class="card-content-wrapper">
+          <span class="card-label"><%= card.label %></span>
+          <div class="card-value-group">
+            <h2 class="card-value"><%= card.value %></h2>
+            <span class="card-change <%= card.changeType %>">
+              <i class="fas fa-chart-line"></i> <%= card.change %>
+            </span>
+          </div>
+          <p class="card-description"><%= card.description %></p>
+        </div>
+      </div>
+    <% }) %>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+      <div class="chat-header">
+        <strong>AyurBot Assistant</strong>
+        <div class="chat-header-buttons">
+          <button id="fullscreenBtn" class="chat-header-btn">⛶</button>
+        </div>
+      </div>
+
+      <div id="chatBody" class="chat-body">
+        <div class="chat-message bot">Hello! How can I help you today?</div>
+      </div>
+      <div class="chat-footer">
+        <input type="text" id="chatInput" placeholder="Ask AyurBot..." class="chat-input">
+        <button id="sendBtn" class="send-btn">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEW & AGENDA -->
+  <div class="cards-container">
+    <div class="card review-card">
+      <div class="card-header">
+        <h3><i class="fa-solid fa-folder-open"></i> Plans Awaiting Review</h3>
+        <span class="badge">3</span>
+      </div>
+      <ul class="card-list">
+        <li>
+          <div class="list-item-content">
+            <span class="title">Meera Singh</span>
+            <span class="subtitle">Pitta Balance Diet</span>
+          </div>
+          <span class="pill">7 days</span>
+        </li>
+        <li>
+          <div class="list-item-content">
+            <span class="title">Arjun Nair</span>
+            <span class="subtitle">Kapha Reduction Plan</span>
+          </div>
+          <span class="pill">14 days</span>
+        </li>
+        <li>
+          <div class="list-item-content">
+            <span class="title">Kavya Iyer</span>
+            <span class="subtitle">Vata Calming Diet</span>
+          </div>
+          <span class="pill">21 days</span>
+        </li>
+      </ul>
+      <a href="#" class="card-footer-link">Review All Plans <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="card agenda-card">
+      <div class="card-header">
+        <h3><i class="fa-regular fa-calendar-days"></i> Today's Agenda</h3>
+        <button class="add-appointment-btn"><i class="fa-solid fa-plus"></i> Add New</button>
+      </div>
+      <ul class="card-list">
+        <li class="appointment-item current">
+          <div class="appointment-icon"><i class="fa-solid fa-video"></i></div>
+          <div class="list-item-content">
+            <span class="title">Ravi Sharma</span>
+            <span class="subtitle">10:00 AM - Consultation</span>
+          </div>
+          <div class="appointment-actions">
+            <button class="action-btn edit"><i class="fa-solid fa-pencil"></i></button>
+            <button class="action-btn delete"><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </li>
+        <li class="appointment-item">
+          <div class="appointment-icon"><i class="fa-solid fa-notes-medical"></i></div>
+          <div class="list-item-content">
+            <span class="title">Mohit Gupta</span>
+            <span class="subtitle">2:00 PM - Diet Review</span>
+          </div>
+          <div class="appointment-actions">
+            <button class="action-btn edit"><i class="fa-solid fa-pencil"></i></button>
+            <button class="action-btn delete"><i class="fa-solid fa-trash-can"></i></button>
+          </div>
+        </li>
+      </ul>
+      <button class="agenda-cta"><i class="fa-solid fa-phone"></i> Start Next Call</button>
+    </div>
+  </div>
+
+  <!-- PROGRESS OVERVIEW -->
+  <section class="card progress-card">
+    <div class="card-header">
+      <h3><i class="fa-solid fa-chart-line"></i> Patient Progress Overview</h3>
+    </div>
+    <ul class="progress-list">
+      <li>
+        <div class="progress-label">
+          <span>Overall Plan Adherence</span>
+          <span>85%</span>
+        </div>
+        <div class="progress-bar"><span style="width: 85%;"></span></div>
+      </li>
+      <li>
+        <div class="progress-label">
+          <span>Patient Satisfaction</span>
+          <span>96%</span>
+        </div>
+        <div class="progress-bar"><span style="width: 96%;"></span></div>
+      </li>
+      <li>
+        <div class="progress-label">
+          <span>Treatment Success Rate</span>
+          <span>78%</span>
+        </div>
+        <div class="progress-bar"><span style="width: 78%;"></span></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const sendBtn = document.getElementById("sendBtn");
+    const chatInput = document.getElementById("chatInput");
+    const chatBody = document.getElementById("chatBody");
+
+    function appendMessage(sender, text) {
+      const msgDiv = document.createElement("div");
+      msgDiv.classList.add("chat-message", sender);
+      msgDiv.innerText = text;
+      chatBody.appendChild(msgDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const userMessage = chatInput.value.trim();
+      if (!userMessage) return;
+
+      appendMessage("user", userMessage);
+      chatInput.value = "";
+
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userMessage, userId: "<%= currentUser._id %>" })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          appendMessage("assistant", data.reply);
+        } else {
+          appendMessage("assistant", "⚠️ Sorry, I couldn’t process that.");
+        }
+      } catch (err) {
+        appendMessage("assistant", "⚠️ Error connecting to server.");
+      }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    const chatbotContainer = document.querySelector(".chatbot-container");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+    // Fullscreen toggle
+    fullscreenBtn.addEventListener("click", () => {
+      chatbotContainer.classList.toggle("fullscreen");
+      document.body.classList.toggle("blur-active");
+    });
+  </script>
+</body>
